@@ -7,5 +7,6 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Toolkit" Version="*"/>
     <PackageReference Include="Microsoft.Toolkit.Wpf.UI.Controls.WebView" Version="*"/>
+    <Content Include=".\Contents\**\*" LinkBase="Contents" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>

@@ -31,6 +31,8 @@ namespace WPFTest
 
         private void B_open_Click(object sender, RoutedEventArgs e)
         {
+            this.B_open.IsEnabled = false ;
+
             SubWindow subwin1 = new SubWindow();
             int prizeNum = this.ComboBox1.SelectedIndex - 1;
 
@@ -50,6 +52,7 @@ namespace WPFTest
 
             MessageBox.Show( strMsgs[ prizeNum ] );
 
+            this.B_open.IsEnabled = true ;
         }
 
     }
