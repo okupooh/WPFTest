@@ -1,0 +1,25 @@
+﻿<Window x:Class="WPFTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFTest"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="450">
+    <Grid>
+        <StackPanel>
+        <TextBlock>抽選方式</TextBlock> 
+            <ComboBox Name="ComboBox1" SelectedIndex="0" IsReadOnly="true" >
+                <ComboBoxItem>ランダム</ComboBoxItem>
+                <ComboBoxItem>ハズレ</ComboBoxItem>
+                <ComboBoxItem>1等</ComboBoxItem>
+                <ComboBoxItem>2等</ComboBoxItem>
+                <ComboBoxItem>3等</ComboBoxItem>
+                <ComboBoxItem>4等</ComboBoxItem>
+                <ComboBoxItem>5等</ComboBoxItem>
+            </ComboBox>
+            <Button x:Name="B_open" Content="抽選開始"  Click="B_open_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
