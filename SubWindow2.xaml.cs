@@ -37,7 +37,8 @@ namespace WPFTest
             string uri = String.Format( "file://localhost/{0}Contents/html/slot.html", AppDomain.CurrentDomain.BaseDirectory );
             this.WebView21.Source = uri != null ? new Uri( uri ) : null;
         */
-            string uri = $"{Environment.CurrentDirectory}/Contents/html/test.html" ;
+        //    string uri = $"{Environment.CurrentDirectory}/Contents/html/test2.html" ;
+            string uri = String.Format( "file://localhost/{0}Contents/html/test2.html", AppDomain.CurrentDomain.BaseDirectory );
             this.WebView21.Source = uri != null ? new Uri( uri ) : null;
 
             InitializeAsync();
