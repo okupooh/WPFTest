@@ -42,6 +42,30 @@ namespace WPFTest
             subwin1.ShowDialog();
         //    this.Close();
 
+            ResultMessage( prizeNum ) ;
+
+            this.B_open.IsEnabled = true ;
+        }
+
+        private void B_open2_Click(object sender, RoutedEventArgs e)
+        {
+            this.B_open2.IsEnabled = false ;
+
+            SubWindow2 subwin2 = new SubWindow2();
+            int prizeNum = this.ComboBox1.SelectedIndex - 1;
+
+            if ( prizeNum < 0 ) prizeNum = m_Lotter.getPrizeNum() ;
+
+            subwin2.PrizeNum = prizeNum ;
+            subwin2.ShowDialog();
+        //    this.Close();
+            ResultMessage( prizeNum ) ;
+
+            this.B_open2.IsEnabled = true ;
+        }
+
+        private void ResultMessage(int prizeNum)
+        {
             string[] strMsgs = {
                 "ハズレでした" ,
                 "1等「7」が当たりました" ,
@@ -51,8 +75,6 @@ namespace WPFTest
                 "5等「プラム」が当たりました" };
 
             MessageBox.Show( strMsgs[ prizeNum ] );
-
-            this.B_open.IsEnabled = true ;
         }
 
     }

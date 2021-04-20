@@ -19,6 +19,7 @@
                 <ComboBoxItem>5等</ComboBoxItem>
             </ComboBox>
             <Button x:Name="B_open" Content="抽選開始"  Click="B_open_Click"/>
+            <Button x:Name="B_open2" Content="抽選開始2"  Click="B_open2_Click"/>
         </StackPanel>
 
     </Grid>
