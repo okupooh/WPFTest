@@ -38,7 +38,7 @@ namespace WPFTest
             this.WebView21.Source = uri != null ? new Uri( uri ) : null;
         */
         //    string uri = $"{Environment.CurrentDirectory}/Contents/html/test2.html" ;
-            string uri = String.Format( "file://localhost/{0}Contents/html/test2.html", AppDomain.CurrentDomain.BaseDirectory );
+            string uri = String.Format( "file://localhost/{0}Contents/html/slot_audio.html", AppDomain.CurrentDomain.BaseDirectory );
             this.WebView21.Source = uri != null ? new Uri( uri ) : null;
 
             InitializeAsync();
@@ -53,6 +53,7 @@ namespace WPFTest
         //    this.WebView21.CoreWebView2.WebMessageReceived += CoreWebView2_WebMessageReceived;
 
         //    webView.CoreWebView2.Navigate(new Uri($"{Environment.CurrentDirectory}/AppData/index.html").AbsoluteUri);
+            this.WebView21.CoreWebView2.WebMessageReceived += this.WebView21_WebMessageReceived ;
         }
 
         private void WebView21_NavigationCompleted(object sender, CoreWebView2NavigationCompletedEventArgs e)
@@ -73,6 +74,7 @@ namespace WPFTest
             MessageBox.Show( this.webBrowser1.DDocument..StatusText );
         }
         */
+        /*
         private void WebView21_NavigationStarting(object sender, CoreWebView2NavigationStartingEventArgs e)
         {
         //    MessageBox.Show( e.Uri.ToString() );
@@ -82,5 +84,15 @@ namespace WPFTest
             }
         
         }
+        */
+        private void WebView21_WebMessageReceived(object sender, CoreWebView2WebMessageReceivedEventArgs e)
+        {
+            string text = e.TryGetWebMessageAsString();
+        //    MessageBox.Show(text);
+            if ( text == "closeWindow" ) {
+                this.Close();
+            }
+        }
+
     }
 }
