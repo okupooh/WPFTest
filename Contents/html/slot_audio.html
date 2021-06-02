@@ -35,7 +35,7 @@
 
 var slotImg = ['slot1.jpg','slot2.jpg','slot3.jpg','slot4.jpg','slot5.jpg'];
 var slotEasing = ['swing','easeOutQuart','easeOutBack','easeOutBounce'];
-var slotDuration = 5;
+var slotDuration = 8;
 var slotNum = 50;
 var startPos = -30 * (slotNum - 3);
 var stopPos = -150;
@@ -58,13 +58,19 @@ var result3 = new Array();
 var audioReel1 = new Audio();
 var audioReel2 = new Audio();
 var audioReel3 = new Audio();
+var audioWin = new Audio();
+var audioLost = new Audio();
 
-audioReel1.src = "./data/a001/mp3/Message3_20.mp3";
-audioReel2.src = "./data/a001/mp3/Message3_01.mp3";
-audioReel3.src = "./data/a001/mp3/Button19.mp3";
+audioReel1.src = "./data/a001/mp3/drumroll_6.mp3";
+audioReel2.src = "./data/a001/mp3/drumroll_5.mp3";
+audioReel3.src = "./data/a001/mp3/drum_2.mp3";
+audioWin.src = "./data/a001/mp3/e1-004_victory_01.mp3";
+audioLost.src = "./data/a001/mp3/e1-005_defeat_01.mp3";
 audioReel1.load();
 audioReel2.load();
 audioReel3.load();
+audioWin.load();
+audioLost.load();
 audioReel1.loop = true ;
 
 document.oncontextmenu = function(){ return false; } ;
@@ -176,29 +182,35 @@ function slotStart(){
 
   PlayAudioReel1() ;
 
+/*
   setTimeout( function() {
     audioReel1.volume = 0.5 ;
   }, time*0.6 ) ;
+*/
 
   slotMove( $("#slots_a .wrapper"), 1 );
   setTimeout( function() {
     slotMove($("#slots_b .wrapper"), 2 );
-  }, 200);
+  }, 400);
   setTimeout( function() {
     slotMove($("#slots_c .wrapper"), 3 );
-  }, 400);
+  }, 800);
 
-  $(this).delay(time+500).queue(function() {
+  $(this).delay(time+2000).queue(function() {
     if (result2[1] == result2[2] && result2[1] == result2[3]) {
         $("#slotMsg").html("BINGO !!!");
+        audioWin.currentTime = 0;
+        audioWin.play() ;
     } else {
         $("#slotMsg").html("TRY AGAIN");
+        audioLost.currentTime = 0;
+        audioLost.play() ;
     }
 //    $("#startBtn").prop('disabled', false);
     $(this).dequeue();
   });
 
-  $(this).delay(2000).queue(function() {
+  $(this).delay(4000).queue(function() {
   //    window.location.href("about:blank") ;
     $("#startBtn").prop('disabled', false);
     window.chrome.webview.postMessage( "closeWindow" ) ;

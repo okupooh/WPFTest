@@ -7,7 +7,7 @@
         xmlns:toolkit="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls.WebView"
         xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
         mc:Ignorable="d"
-        Title="SubWindow2" Height="385" Width="385"
+        Title="SubWindow2" Height="768" Width="768"
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="false"
