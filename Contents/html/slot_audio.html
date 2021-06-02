@@ -68,9 +68,15 @@ audioReel3.load();
 audioReel1.loop = true ;
 
 document.oncontextmenu = function(){ return false; } ;
-document.body.style.zoom = "200%" ;
+//document.body.style.zoom = "200%" ;
 document.body.style.overflow = "hidden" ;
 document.body.style.filter = "alpha(opacity=50)" ;
+
+document.body.style.zoom = Math.round( ( window.innerHeight / 205 ) *100 ) + "%" ;
+
+window.onresize = function() {
+  document.body.style.zoom = Math.round( ( window.innerHeight / 205 ) *100 ) + "%" ;
+} ;
 
 /*
 $(document).ready(function() {
