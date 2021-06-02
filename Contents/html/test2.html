@@ -51,10 +51,14 @@ var result2 = new Array();
 var result3 = new Array();
 
 document.oncontextmenu = function(){ return false; } ;
-document.body.style.zoom = "200%" ;
 document.body.style.overflow = "hidden" ;
 document.body.style.filter = "alpha(opacity=50)" ;
 
+document.body.style.zoom = Math.round( ( document.body.scrollWidth / 195 ) *100 ) + "%" ;
+
+window.onresize = function() {
+  document.body.style.zoom = Math.round( ( document.body.scrollWidth / 195 ) *100 ) + "%" ;
+} ;
 /*
 $(document).ready(function() {
 //  atariHantei();
@@ -296,6 +300,10 @@ body {
 }
 </style>
 
+<!--
+<div style="width:370px;">
+-->
+
 <div id="slotbox">
 <div style="display:none;">
 <div id="slots_a">
@@ -325,7 +333,9 @@ body {
 <input id="numWinning" type="hidden" value="16" />
 
 </div>
+
 <!--
+</div>
 <div id="test01">
 </div>
 -->
