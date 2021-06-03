@@ -110,6 +110,8 @@ function PlayAudioReel1() {
 
 function setNumWinning( numWin ) {
 //  atariHantei();
+  if ( --numWin < 0 ) numWin = 128 ;
+  
   atariIdx = numWin ;
   hantei = atariIdx < slotImg.length ;
   slotCreate( $("#slots_a .wrapper"), 1 );

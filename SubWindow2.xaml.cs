@@ -58,10 +58,10 @@ namespace WPFTest
 
         private void WebView21_NavigationCompleted(object sender, CoreWebView2NavigationCompletedEventArgs e)
         {
-            int numWin = this.PrizeNum ;
-            if ( numWin == 0 ) numWin = 128 ;
+        //    int numWin = this.PrizeNum ;
+        //    if ( numWin < 0 ) numWin = 128 ;
         //    MessageBox.Show("Webページの読み込みが完了しました！");
-            this.WebView21.CoreWebView2.ExecuteScriptAsync( "setNumWinning(" + ( numWin-1 ).ToString() +");" );
+            this.WebView21.CoreWebView2.ExecuteScriptAsync( "setNumWinning( " + this.PrizeNum.ToString() +" );" );
 
         //    this.webBrowser1.Refresh() ;
             Task.Delay(1000).Wait();
