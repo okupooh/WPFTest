@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="450">
     <Grid>
         <StackPanel>
-        <TextBlock>抽選方式</TextBlock> 
+            <TextBlock>抽選方式</TextBlock> 
             <ComboBox Name="ComboBox1" SelectedIndex="0" IsReadOnly="true" >
                 <ComboBoxItem>ランダム</ComboBoxItem>
                 <ComboBoxItem>ハズレ</ComboBoxItem>
@@ -17,6 +17,9 @@
                 <ComboBoxItem>3等</ComboBoxItem>
                 <ComboBoxItem>4等</ComboBoxItem>
                 <ComboBoxItem>5等</ComboBoxItem>
+            </ComboBox>
+            <TextBlock>リール回転時間(秒)</TextBlock> 
+            <ComboBox Name="ComboBox2" SelectedIndex="0" IsReadOnly="true" >
             </ComboBox>
             <Button x:Name="B_open" Content="抽選開始(WebBrowser)"  Click="B_open_Click"/>
             <Button x:Name="B_open2" Content="抽選開始(WebView2)"  Click="B_open2_Click"/>

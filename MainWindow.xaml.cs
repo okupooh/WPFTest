@@ -27,6 +27,13 @@ namespace WPFTest
 
             m_Lotter = new Lotter();
         //    m_Lotter.printLotterTable();
+
+            for (int i=1; i<31 ; i++ ) {
+                this.ComboBox2.Items.Add(i);
+            }
+
+            this.ComboBox2.SelectedIndex = 2 ;
+
         }
 
         private void B_open_Click(object sender, RoutedEventArgs e)
@@ -57,6 +64,7 @@ namespace WPFTest
             if ( prizeNum < 0 ) prizeNum = m_Lotter.getPrizeNum() ;
 
             subwin2.PrizeNum = prizeNum ;
+            subwin2.SlotDuration = this.ComboBox2.SelectedIndex + 1 ;
             subwin2.ShowDialog();
         //    this.Close();
             ResultMessage( prizeNum ) ;

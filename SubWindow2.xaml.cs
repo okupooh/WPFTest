@@ -46,6 +46,7 @@ namespace WPFTest
 
 
         public int PrizeNum { get; set; }
+        public int SlotDuration { get; set; }
 
         async void InitializeAsync()
         {
@@ -58,11 +59,14 @@ namespace WPFTest
 
         private void WebView21_NavigationCompleted(object sender, CoreWebView2NavigationCompletedEventArgs e)
         {
-            this.WebView21.CoreWebView2.ExecuteScriptAsync( "setNumWinning( " + this.PrizeNum.ToString() +" );" );
+        //    this.WebView21.CoreWebView2.ExecuteScriptAsync( "setNumWinning( " + this.PrizeNum.ToString() +" );" );
 
         //    this.webBrowser1.Refresh() ;
-            Task.Delay(1000).Wait();
-            this.WebView21.CoreWebView2.ExecuteScriptAsync( "slotStart();" );
+        //    Task.Delay(1000).Wait();
+            this.WebView21.CoreWebView2.ExecuteScriptAsync(
+                "slotStartOnWebView( " +
+                    this.PrizeNum.ToString() + " , " +
+                    this.SlotDuration.ToString() + " );" );
         }
 
         /*
